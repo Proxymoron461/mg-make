@@ -47,6 +47,8 @@ fi
 if [[ $gitrepo == "true" ]] ; then
     printf "\nInitialising git repository...\n"
     git init
+    printf "\nAdding .gitignore...\n"
+    touch .gitignore
 fi
 
 # Run the project!

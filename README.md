@@ -19,7 +19,7 @@ While this script is primarily a note-to-self, if anyone else finds it helpful, 
 
 Use the `-e` flag to add MonoGame.Extended to the project!
 
-Use the `-g` flag to initialise a git repository in the project directory.
+Use the `-g` flag to initialise a git repository in the project directory, including a .gitignore file.
 
 Replace PROJECT_NAME with your project name - e.g. `./mg-make Test`.
 
