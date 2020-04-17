@@ -39,7 +39,7 @@ fi
 
 # Go to new directory and create project
 if mkdir $1 && cd $1 > /dev/null ; then
-    echo "Created and moved into new directory."
+    echo "Created and moved into new directory, $PWD"
 fi
 if dotnet new mgdesktopgl > /dev/null ; then
     echo "Successfully created .NET project."
