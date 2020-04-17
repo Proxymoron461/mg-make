@@ -3,15 +3,21 @@
 extended="false"
 gitrepo="false"
 
-# Go through all options
-while [[ $1 =~ ^- ]] ; do case $1 in
-    "-e")
-        extended="true"
-        ;;
-    "-g")
-        gitrepo="true"
-        ;;
-esac; shift; done
+# Go through all options, including ones that can be combined.
+while [[ $1 =~ ^- ]] ; do
+    for (( i=1; i<${#1}; i++ )); do case "${1:i:1}" in
+        "e")
+            extended="true"
+            ;;
+        "g")
+            gitrepo="true"
+            ;;
+        *)
+            echo "Unknown option: ${1:i:i+1}."
+            exit 1
+            ;;
+    esac; done
+shift; done
 
 # Check file doesn't already exist.
 for file in ./*; do
