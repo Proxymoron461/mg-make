@@ -24,3 +24,5 @@ Use the `-g` flag to initialise a git repository in the project directory, inclu
 Replace PROJECT_NAME with your project name - e.g. `./mg-make Test`.
 
 From the **current directory**, it will create a subdirectory called Test, and a new .NET project and solution with the same name!
+
+May need to `chmod u+x mg-make` to make it executable.
