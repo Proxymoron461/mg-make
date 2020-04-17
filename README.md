@@ -1,6 +1,7 @@
 # mg-make
 A shell script for creating MonoGame projects on (Ubuntu) Linux.
 
+## Dependencies
 It has the following dependencies:
 - `msbuild`: which can be installing using `apt-get install msbuild`. (See below.)
 - `dotnet`: install instructions can be found at: https://dotnet.microsoft.com/download.
@@ -12,3 +13,9 @@ I had some difficulties installing `msbuild` and having to fix broken packages, 
 
 While this script is primarily a note-to-self, if anyone else finds it helpful, go nuts! It has *no warranty whatsoever*.
 
+## Usage instructions
+`./mg-make [ -e ] PROJECT_NAME`
+
+Use the `-e` flag to add MonoGame.Extended to the project!
+
+Replace PROJECT_NAME with your project name - e.g. `./mg-make Test`. It will create a subdirectory called Test, and a new .NET project and solution with the same name!
