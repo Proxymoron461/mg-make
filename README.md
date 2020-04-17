@@ -18,4 +18,6 @@ While this script is primarily a note-to-self, if anyone else finds it helpful, 
 
 Use the `-e` flag to add MonoGame.Extended to the project!
 
-Replace PROJECT_NAME with your project name - e.g. `./mg-make Test`. It will create a subdirectory called Test, and a new .NET project and solution with the same name!
+Replace PROJECT_NAME with your project name - e.g. `./mg-make Test`.
+
+From the **current directory**, it will create a subdirectory called Test, and a new .NET project and solution with the same name!
