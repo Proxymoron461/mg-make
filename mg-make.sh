@@ -38,26 +38,34 @@ elif [[ ! "$1" =~ ^[a-zA-Z0-9]*$ ]] ; then
 fi
 
 # Go to new directory and create project
-mkdir $1
-cd $1
-dotnet new mgdesktopgl
-dotnet new sln
+if mkdir $1 && cd $1 > /dev/null ; then
+    echo "Created and moved into new directory."
+fi
+if dotnet new mgdesktopgl > /dev/null ; then
+    echo "Successfully created .NET project."
+fi
+if dotnet new sln > /dev/null ; then
+    echo "Successfully created .NET project solution."
+fi
 
 # Add MonoGame.Extended if desired
 if [[ $extended == "true" ]] ; then
-    printf "\nAdding package MonoGame.Extended...\n"
-    dotnet add package MonoGame.Extended
+    if dotnet add package MonoGame.Extended > /dev/null ; then
+        echo "Successfully added MonoGame.Extended to project."
+    fi
 fi
 
 # Add git repo if desired
 if [[ $gitrepo == "true" ]] ; then
-    printf "\nInitialising git repository...\n"
-    git init
-    printf "\nAdding .gitignore...\n"
-    touch .gitignore
+    if git init > /dev/null ; then
+        echo "Successfuly added git repository."
+    fi
+    if touch .gitignore > /dev/null ; then
+        echo "Successfully added .gitignore file."
+    fi
 fi
 
 # Run the project!
-printf "\nRunning the blank project in the background to check it works.\nPress the ESC key to exit."
+echo "Running the blank project in the background to check it works.\nPress the ESC key to exit."
 dotnet run &
 
